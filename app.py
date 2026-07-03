@@ -1,10 +1,7 @@
 """
-app.py — Literature Radar
-A research monitoring tool for second language acquisition and
-digital game-based language learning.
-
-Queries Semantic Scholar for recent publications matching your
-configured search terms, tracks which papers you have already
+app.py — SciLit Sonar
+A research monitoring tool. Queries Semantic Scholar for recent publications
+matching your configured search terms, tracks which papers you have already
 reviewed, and surfaces only new work each time you open the app.
 """
 
@@ -27,17 +24,7 @@ from radar import (
 
 # ── default search terms pre-loaded for Vijith's research stream ─────────────
 
-DEFAULT_TERMS = """\
-digital game-based language learning
-commercial video games second language acquisition
-extramural English vocabulary
-narrative games EFL learners
-COTS games language learning
-self-determination theory second language
-situated learning game-based
-vocabulary acquisition informal learning
-out-of-school digital game English\
-"""
+DEFAULT_TERMS = ""
 
 
 # ── session state initialisation ─────────────────────────────────────────────
@@ -178,7 +165,7 @@ def papers_to_dataframe(papers: list[dict]) -> pd.DataFrame:
 
 def main() -> None:
     st.set_page_config(
-        page_title="Literature Radar",
+        page_title="SciLit Sonar",
         page_icon="📡",
         layout="wide",
     )
@@ -186,10 +173,10 @@ def main() -> None:
     init_state()
 
     # ── header ──
-    st.markdown("## 📡 Literature Radar")
+    st.markdown("## 📡 SciLit Sonar")
     st.markdown(
         "<span style='font-size:14px;opacity:0.6;'>"
-        "Monitoring recent publications in DGBLL, SLA, and educational technology"
+        "Monitor recent publications"
         "</span>",
         unsafe_allow_html=True,
     )
